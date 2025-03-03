@@ -130,3 +130,7 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# ログインに必要な設定
+# 自分の設定
+# LOGIN_URL = 'users:login'

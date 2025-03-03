@@ -1,6 +1,16 @@
 <p>
     <a href="{% url 'learning_logs:index' %}">学習ノート</a>
     <a href="{% url 'learning_logs:topics' %}">トピック一覧</a>
+    {% if user.is_authenticated %}
+    <form method="post" action="{% url 'users:logout' %}" style="display: inline;">
+        {% csrf_token %}
+        こんにちは、{{ user.username }}さん
+        <button type="submit">ログアウト</button>
+    </form>
+    {% else %}
+        <a href="{% url 'users:register' %}">ユーザー登録</a>
+        <a href="{% url 'users:login' %}">ログイン</a>
+    {% endif %}
 </p>
 
 {% block content %}{% endblock content %}
